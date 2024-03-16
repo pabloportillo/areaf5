@@ -1,0 +1,53 @@
+version: '3'
+services:
+  laravel.test:
+    build:
+      context: ./vendor/laravel/sail/runtimes/8.3
+      dockerfile: Dockerfile # (Only if you have specific customizations)
+      args:
+        WWWGROUP: 1000 
+        WWWUSER: 1000 
+    image: sail-8.3/app
+    ports:
+      - '80:80'  # Expose for accessing your Laravel app
+    environment:
+      # Environment variables from your .env file
+      WWWGROUP: 1000
+      WWWUSER: 1000
+      # ... and any other environment variables ...
+    volumes:
+      - '.:/var/www/html' # Mount your project code
+    networks:
+      - sail
+
+  mysql:
+    image: 'mysql/mysql-server:8.0'
+    ports:
+      - '${FORWARD_DB_PORT:-3306}:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}' 
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}' 
+    volumes:
+      - 'sail-mysql:/var/lib/mysql' 
+    networks:
+      - sail
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    networks:
+      - sail
+
+networks:
+  sail:
+    driver: bridge
+
+volumes:
+  sail-mysql:
+    driver: local
