@@ -13,7 +13,7 @@ class ImportPokemonCsv extends Command
 
     public function handle()
     {
-        $filePath = base_path('storage/app/pokemon.csv');
+        $filePath = base_path('storage/pokemon.csv');
 
         $this->info('Iniciando la importación del archivo CSV...');
 
