@@ -55,7 +55,7 @@ Este proyecto te permite gestionar una colección de Pokémon, incluyendo sus da
 
    ```bash 
    ./vendor/bin/sail artisan db:seed
-8. **Importar el archivo pokemon.csv (verificar que el archivo se encuentra en storage/app/pokemon.csv para su correcta importación):**
+8. **Importar el archivo pokemon.csv (verificar que el archivo se encuentra en storage/pokemon.csv para su correcta importación):**
 
    ```bash 
    ./vendor/bin/sail artisan import:pokemon-csv
