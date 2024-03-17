@@ -33,33 +33,32 @@ Este proyecto te permite gestionar una colección de Pokémon, incluyendo sus da
    ```bash 
    composer install 
    composer update
-3. **Configurar entorno de desarrollo por primera vez:**
+
+3. **Copia el archivo `.env.example` y renómbralo a `.env`**
+
+4. **Configurar entorno de desarrollo por primera vez:**
 
    ```bash 
    docker-compose build 
-4. **Levantar el proyecto:**
+5. **Levantar el proyecto:**
 
    ```bash 
    ./vendor/bin/sail up
-5. **Configurar la base de datos:**
-
-   5.1. Copia el archivo `.env.example` y renómbralo a `.env`. Luego, configura tu base de datos y otras variables de entorno en el archivo `.env` si quieres cambiarlo.
-
-   5.2. Ejecuta las migraciones:
+6. **Configurar la base de datos ejecutando las migraciones:**
 
    ```bash 
    ./vendor/bin/sail artisan migrate
-6. **Lanzar los seeders de Usuarios y Pokemons:**
+7. **Lanzar los seeders de Usuarios y Pokemons:**
 
       ***¡Importante!:Los seeders crean datos dummy para usuarios y pokemons, teniendo en cuenta que los pokemons que creará no estaran en la pokedex, si no que seran datos aleatorios!. Para distinguir esto he añadido un campo 'dummy' en el listado en el que muestra si el dato representado es aleatorio o no lo es.***
 
    ```bash 
    ./vendor/bin/sail artisan db:seed
-7. **Importar el archivo pokemon.csv (verificar que el archivo se encuentra en storage/app/pokemon.csv para su correcta importación):**
+8. **Importar el archivo pokemon.csv (verificar que el archivo se encuentra en storage/app/pokemon.csv para su correcta importación):**
 
    ```bash 
    ./vendor/bin/sail artisan import:pokemon-csv
-8. **Acceder a la aplicación: Abre tu navegador en la dirección:**
+9. **Acceder a la aplicación: Abre tu navegador en la dirección:**
 
    ```bash 
    http://localhost
