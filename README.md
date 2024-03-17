@@ -36,6 +36,7 @@ Este proyecto te permite gestionar una colección de Pokémon, incluyendo sus da
 
 3. **Copia el archivo `.env.example` y renómbralo a `.env`**
 
+
 4. **Configurar entorno de desarrollo por primera vez:**
 
    ```bash 
