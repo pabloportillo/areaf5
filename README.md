@@ -93,5 +93,3 @@ Este proyecto te permite gestionar una colección de Pokémon, incluyendo sus da
       {
          "item_type": "berry"
       }
-
-## Si teneis alguna pregunta o problema, no dudeis en contactarme.
