@@ -1,4 +1,4 @@
-## Prueba técnica de gestión de Pokemons con Laravel en entorno dockerizado
+## Gestión de Pokemons con Laravel en entorno dockerizado
 
 **Descripción:**
 
